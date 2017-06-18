@@ -1,0 +1,32 @@
+<h1><%= @club.name %></h1>
+<p>
+  <%= @club.address %>
+  <%= @club.zip_code %>
+  <%= @club.city %>
+  <%= @club.country %>
+</p>
+<p>
+  <% if @club.public %>
+    Ce club appartient à la Municipalité de Paris
+  <% else %>
+    C'est un club privé.
+  <% end %>
+</p>
+<p>Le club <%= @club.name %> possède <%= @club.courts.count %> courts:</p>
+<% @club.courts.each do |court| %>
+  <p>Court n°<%= court.name %>:</p>
+  <p>Type de surface: <%= court.surface %></p>
+  <% if court.covered %>
+    <p>Couvert</p>
+  <% else %>
+    <p>Non couvert</p>
+  <% end %>
+  <% if court.light %>
+    <p>Eclairé</p>
+  <% else %>
+    <p>Non éclairé</p>
+  <% end %>
+  <p>Prix à l'heure: <%= court.price %>€</p>
+<% end %>
+
+
