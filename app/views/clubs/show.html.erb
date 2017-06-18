@@ -13,6 +13,7 @@
   <% end %>
 </p>
 <p>Le club <%= @club.name %> possède <%= @club.courts.count %> courts:</p>
+<p>____________________________</p>
 <% @club.courts.each do |court| %>
   <p>Court n°<%= court.name %>:</p>
   <p>Type de surface: <%= court.surface %></p>
@@ -27,6 +28,7 @@
     <p>Non éclairé</p>
   <% end %>
   <p>Prix à l'heure: <%= court.price %>€</p>
+  <p>____________________________</p>
 <% end %>
 
 
